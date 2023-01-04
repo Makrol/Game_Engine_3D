@@ -19,6 +19,7 @@ using namespace sf;
 #include "Cube.h"
 #include "GameMap.h"
 #include "Player.h"
+#include "Equipment.h"
 
 class Engine
 {
@@ -46,6 +47,8 @@ public:
 		"void main() {" \
 		"	gl_FragColor = texture2D(texture, uv);" \
 		"}";
+
+
 
 	///Shader Types
 	enum class ShaderType { Vertex, Fragment, Geometry, Count };
@@ -158,6 +161,7 @@ public:
 	void initGlew();
 	void loadFiles();
 	void create3DObjects();
+	void create2DObjects();
 	int y=0;
 	int z=-100;
 	ContextSettings contextSettings;
@@ -176,7 +180,10 @@ public:
 	glm::mat4 matrix_pos;
 	GameMap *gamemap;
 	Player *player;
-	
+	Equipment equ;
+	Texture equTex;
+	Font font;
+
 	void mainLoop();
 
 };

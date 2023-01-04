@@ -250,6 +250,9 @@ void Cube::draw(sf::RenderWindow &window)
 	sf::Texture::bind(texture);
 	glBindVertexArray(vao);
 	glDrawElements(GL_TRIANGLES, drawCount, GL_UNSIGNED_INT, 0);
+
+	
+
 	window.setActive(false);
 }
 

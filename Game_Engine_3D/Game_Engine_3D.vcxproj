@@ -137,23 +137,29 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Equipment.cpp" />
     <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="Game_Engine_3D.cpp" />
     <ClCompile Include="InputEngine.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="KeyboardEngine.cpp" />
     <ClCompile Include="MouseEngine.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Slot.cpp" />
     <ClCompile Include="Vector4d.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Cube.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="Equipment.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="InputEngine.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="KeyboardEngine.h" />
     <ClInclude Include="MouseEngine.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Slot.h" />
     <ClInclude Include="Vector4d.h" />
   </ItemGroup>
   <ItemGroup>

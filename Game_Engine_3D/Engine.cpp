@@ -1,18 +1,18 @@
 #include "Engine.h"
 
 Engine::Engine()
-{
-
+{	
 	initEngine();
 	mainLoop();
 }
 
 void Engine::initEngine()
 {
+	
 	initWindow();
 	initGlew();
 	loadFiles();
-
+	create2DObjects();
 	create3DObjects();
 }
 
@@ -117,25 +117,52 @@ void Engine::update()
 void Engine::render()
 {
 	
-	
-	
-	glClearColor(0.53f, 0.81f, 0.92f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT);
+	//glClearColor(0.53f, 0.81f, 0.92f, 1.0f);
+	//glClear(GL_COLOR_BUFFER_BIT);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
 	window.setActive(true);
-	
-	
-	engineCamera.transformCamera(uniform, (int)UniformType::TransformPVM,program,frameTime);
 
 
+	engineCamera.transformCamera(uniform, (int)UniformType::TransformPVM, program, frameTime);
+
 	
+
+
 	window.setActive(false);
 	gamemap->showMap(window);
-	player->render(window);
+	//player->render(window);
+	//player->render(window);
+	
+
+
+
 
 	glBindVertexArray(0);
 	glUseProgram(0);
+
+	window.setActive(false);
+
+
+	//equ.show(&window, sf::Vector2f(400, 400));
+	Text text("gdfgadfgdsfgdsfgdfgdfsgdfgdf", font);
+	text.setFillColor(sf::Color(255, 0, 0, 170));
+	text.setCharacterSize(100);
+	text.setPosition(0, 0);
+	//Sprite tmp;
+	//tmp.setTexture(equTex);
+	window.pushGLStates();
+	window.draw(text);
+
+	//equ.show(&window, sf::Vector2f(0, 0));
+	window.popGLStates();
+
 	window.display();
+
+	//glFlush();
+	
+	
+	
 }
 
 void Engine::initWindow()
@@ -193,6 +220,14 @@ void Engine::loadFiles()
 	}
 	movePointTex.generateMipmap();
 
+	if (!font.loadFromFile("resources/font.ttf"))
+	{
+		std::cout << "font";
+	}
+	if (!equTex.loadFromFile("resources/player.png"))
+	{
+		std::cout << "texture";
+	}
 }
 
 void Engine::create3DObjects()
@@ -212,7 +247,6 @@ void Engine::create3DObjects()
 	glCullFace(GL_BACK);
 
 	gamemap = new GameMap(15, grasTex, squereTex,movePointTex, (int)VertexAttribute::Position, (int)VertexAttribute::TexCoord);
-	
 	player = new Player(playerTex, vec3(gamemap->getPos(5).x, 60, gamemap->getPos(5).z), 40, 70, 40, (int)VertexAttribute::Position, (int)VertexAttribute::TexCoord);
 	player->posIndex = 5;
 	//player->move(uvec3(30, 150, 0),5);
@@ -224,6 +258,12 @@ void Engine::create3DObjects()
 	
 
 
+}
+
+void Engine::create2DObjects()
+{
+	equ.setIconSprite(&playerTex);
+	equ.setFonts(font);
 }
 
 
