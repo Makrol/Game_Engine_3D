@@ -48,7 +48,7 @@ void Camera::transformCamera(GLint uniform[], int uniformType, GLuint& program,f
 	const float radius = 10.0f;
 	float camX = sin(2) * radius;
 	float camZ = cos(time) * radius;
-	glm::mat4 view;
+	
 	view = projection* transform * glm::lookAt(glm::vec3(camX, 0.0, 0.0), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
 	
 
@@ -60,6 +60,11 @@ void Camera::transformCamera(GLint uniform[], int uniformType, GLuint& program,f
 
 	
 	//glUniformMatrix4fv()
+}
+
+glm::mat4* Camera::getView()
+{
+	return &view;
 }
 
 void Camera::rotate(float x, float y, float z,float frameTime)

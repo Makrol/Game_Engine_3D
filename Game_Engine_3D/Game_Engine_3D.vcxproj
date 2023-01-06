@@ -136,11 +136,13 @@
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Equipment.cpp" />
     <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="Game_Engine_3D.cpp" />
     <ClCompile Include="InputEngine.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="KeyboardEngine.cpp" />
     <ClCompile Include="MouseEngine.cpp" />
@@ -151,10 +153,12 @@
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Cube.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Equipment.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="InputEngine.h" />
+    <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="KeyboardEngine.h" />
     <ClInclude Include="MouseEngine.h" />

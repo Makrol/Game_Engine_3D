@@ -28,13 +28,22 @@ private:
 	int positionV;
 	int texCoordV;
 	Texture playerTex;
+	double armorValues=10;
+	double damageValues = 10;
+	double agilityValues = 10;
+	double healthValues = 100;
 	
 public:
 	int posIndex;
 	int lockIndex = -1;
-	Player(Texture &pTex, vec3 position, float sizeX, float sizeY, float sizeZ, int positionV, int texCoordV);
+	Player(Texture &pTex, sf::RenderWindow* window, vec3 position, float sizeX, float sizeY, float sizeZ, int positionV, int texCoordV);
 	void update();
-	void move(vec3 value,int posIndex, int boardSize);
-	void render(RenderWindow &window);
+	void move(sf::RenderWindow* window,vec3 value,int posIndex, int boardSize);
+	void render(RenderWindow *window, GLuint program, glm::mat4& viewProj);
+
+	double* getArmorValues();
+	double* getDamageValues();
+	double* getAgilityValues();
+	double* getHealthValues();
 };
 

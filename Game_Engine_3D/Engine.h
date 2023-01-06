@@ -20,6 +20,8 @@ using namespace sf;
 #include "GameMap.h"
 #include "Player.h"
 #include "Equipment.h"
+#include "Inventory.h"
+#include "Enemy.h"
 
 class Engine
 {
@@ -162,6 +164,7 @@ public:
 	void loadFiles();
 	void create3DObjects();
 	void create2DObjects();
+	bool testB = false;
 	int y=0;
 	int z=-100;
 	ContextSettings contextSettings;
@@ -175,15 +178,21 @@ public:
 	sf::Texture grasTex;
 	sf::Texture squereTex;
 	sf::Texture playerTex;
+	sf::Texture enemyTex;
 	sf::Texture movePointTex;
 	glm::mat4 projection;
 	glm::mat4 matrix_pos;
 	GameMap *gamemap;
 	Player *player;
 	Equipment equ;
+	Inventory inv;
 	Texture equTex;
 	Font font;
-
+	Text text;
+	bool IKeyReleased = true;
+	bool EKeyReleased = true;
+	std::list<Enemy*> enemyList;
+	
 	void mainLoop();
 
 };

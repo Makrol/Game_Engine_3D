@@ -16,7 +16,7 @@ private:
 	glm::vec3 cameraPosition;
 	glm::mat4 projection;
 	glm::mat4 rotation;
-
+	glm::mat4 view;
 
 public:
 	Camera();
@@ -25,5 +25,6 @@ public:
 	void rotate(float x, float y, float z, float frameTime);
 	void resizeWindowProjection(int width, int height);
 	void transformCamera(GLint uniform[], int uniformType, GLuint& program,float time);
+	glm::mat4* getView();
 };
 

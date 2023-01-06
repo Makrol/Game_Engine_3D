@@ -1,7 +1,7 @@
 #pragma once
 #include "Slot.h"
 /**
- * @brief Klasa z wyposarzeniem gracza w postaci za³o¿onych przedmiotów oraz statystyk
+ * @brief Klasa z wyposazeniem gracza w postaci za³o¿onych przedmiotów oraz statystyk
  *
  */
 class Equipment
@@ -22,19 +22,19 @@ private:
 	double* agilityValues;/*!<>*/
 	double* healthValues;/*!<>*/
 
-	Font gameFont;/*!<Trzcionka>*/
+	Font gameFont;/*!<Czcionka>*/
 
 	RectangleShape background;/*!<T³o okna equipment>*/
 	/**
-	 * @brief Ustawienie pozycjislotów w wyposarzeniu
+	 * @brief Ustawienie pozycji slotów w wyposazeniu
 	 *
-	 * @param bcgPos pozycja t³a wypozarzenia na ekranie
+	 * @param bcgPos pozycja t³a wypozazenia na ekranie
 	 */
 	void positioningSlots(Vector2f bcgPos);
 	/**
-	 * @brief Aktulizacja stanu statystyk wyswietlanych w wyposarzeniu
+	 * @brief Aktulizacja stanu statystyk wyswietlanych w wyposazeniu
 	 *
-	 * @param pos pozycja t³a wypozarzenia na ekranie
+	 * @param pos pozycja t³a wypozazenia na ekranie
 	 */
 	void updateStatistics(Vector2f pos);
 	/**

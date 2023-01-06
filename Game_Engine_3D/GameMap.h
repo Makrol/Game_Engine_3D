@@ -28,10 +28,10 @@ private:
 	sf::Texture squereTex;
 	sf::Texture moveT;
 	int size;
-	void initMap(int positionV, int texCoordV);
+	void initMap(int positionV, int texCoordV, sf::RenderWindow* window);
 public:
-	GameMap(int boardSize, Texture &ground, Texture &squere,Texture & moveT, int positionV, int texCoordV);
-	void showMap(RenderWindow &window);
+	GameMap(sf::RenderWindow* window,int boardSize, Texture &ground, Texture &squere,Texture & moveT, int positionV, int texCoordV);
+	void showMap(RenderWindow &window, GLuint program, glm::mat4& viewProj);
 	glm::vec3 getPos(int x);
 	int getSize();
 	void showAllMoves(int num);

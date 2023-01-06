@@ -41,11 +41,12 @@ void Equipment::setDefaultParameters(double* health, double* damage, double* arm
 	damageValues = damage;
 	agilityValues = agility;
 	healthValues = health;
+	std::cout << *healthValues <<" " <<*health;
 }
 
 Equipment::Equipment()
 {
-	visable = true;
+	visable = false;
 	sizeX = 310;
 	sizeY = 400;
 	background.setPosition(0, 0);
@@ -130,19 +131,20 @@ void Equipment::addItem(Item& item, bool& tmpbool)
 
 void Equipment::setIconSprite(Texture* player)
 {
+	
 	playerIcon.setTexture(*player);
 	playerIcon.setOrigin(playerIcon.getGlobalBounds().width / 2, playerIcon.getGlobalBounds().height / 2);
 	playerIcon.setScale(4, 4);
+	playerIcon.rotate(180);
 }
 
 void Equipment::show(RenderTarget* target, Vector2f pos)
 {
 	if (visable)
 	{
-
-		background.setPosition(Vector2f(pos.x - 770, pos.y - sizeY / 2));
-		playerIcon.setPosition(Vector2f(pos.x - 770 + background.getLocalBounds().width / 2, pos.y - sizeY / 2 + background.getLocalBounds().height / 2 - 60));
-		//updateStatistics(background.getPosition());
+		background.setPosition(Vector2f(0,0));
+		playerIcon.setPosition(Vector2f((pos.x / 2)-(playerIcon.getGlobalBounds().width/2)+25, (pos.y / 2)-(playerIcon.getGlobalBounds().height/2) + 25));
+		updateStatistics(background.getPosition());
 		target->draw(background);
 		target->draw(playerIcon);
 		positioningSlots(background.getPosition());
